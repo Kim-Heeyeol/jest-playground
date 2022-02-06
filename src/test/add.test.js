@@ -1,6 +1,6 @@
 const add = require('../add');
 
-test('', () => {
+test('add', () => {
   // test
   expect(add(1, 2)).toBe(3);
 });
