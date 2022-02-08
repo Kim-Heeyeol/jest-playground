@@ -76,6 +76,7 @@ describe('async', () => {
   });
 
   //resolves, rejects를 사용하는 경우
+  //async await과 합쳐서 사용 가능
   it('async resolves', () => {
     return expect(fetchProduct()).resolves.toEqual(obj);
   });
