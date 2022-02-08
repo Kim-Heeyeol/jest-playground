@@ -6,6 +6,7 @@ describe('Calculator', () => {
   beforeEach(() => {
     cal = new Calculator();
   });
+
   it('inits with 0', () => {
     expect(cal.value).toBe(0);
   });
@@ -24,6 +25,12 @@ describe('Calculator', () => {
     cal.set(1);
     cal.add(3);
     expect(cal.value).toBe(4);
+  });
+
+  it('add should throw an error if value is greater than 100', () => {
+    expect(() => {
+      cal.add(101);
+    }).toThrow('Value can not be greater than 100');
   });
 
   it('subtracts', () => {
