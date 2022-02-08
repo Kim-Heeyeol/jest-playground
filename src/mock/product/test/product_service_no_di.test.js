@@ -8,6 +8,7 @@ jest.mock('../product_client');
 
 describe('ProductService', () => {
   //ProductClient 내부의 fetchItems mock 함수로 지정
+  //해당 함수가 비동기함수니까 async 붙여줘야함
   const newFetchItems = jest.fn(async () => [
     { item: 'Milk', available: true },
     { item: 'Banana', available: false },
@@ -33,10 +34,10 @@ describe('ProductService', () => {
     expect(items.length).toBe(1);
   });
 
-  // it('mockClear', async () => {
-  //   const items = await productService.fetchAvailableItems();
-  //   //true인 이유는 jest.config 파일에 clearMocks가 true이기 때문
-  //   //false라면 beforeEach 메소드에서 반복되는 함수 mockClear() 해줘야 함
-  //   expect(newFetchItems).toHaveBeenCalledTimes(1);
-  // });
+  it('mockClear', async () => {
+    const items = await productService.fetchAvailableItems();
+    //true인 이유는 jest.config 파일에 clearMocks가 true이기 때문
+    //false라면 beforeEach 메소드에서 반복되는 함수 mockClear() 해줘야 함
+    expect(newFetchItems).toHaveBeenCalledTimes(1);
+  });
 });
