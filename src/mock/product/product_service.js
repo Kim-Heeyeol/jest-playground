@@ -1,3 +1,4 @@
+//해당 클래스를 사용하려면 상위에서 injection 해주면 됨
 class productService {
   constructor(ProductClient) {
     this.productClient = ProductClient;

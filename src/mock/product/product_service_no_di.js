@@ -1,4 +1,5 @@
 // 함수 bad_case
+// 재사용성이 떨어짐
 const ProductClient = require('./product_client');
 class ProductService {
   constructor() {
